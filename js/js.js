@@ -1,6 +1,7 @@
 var turn = true;
 var square=[];
 
+
 function reset(A,B,C){
     document.getElementById('c'+A).style.backgroundColor="#333";
     document.getElementById('c'+B).style.backgroundColor="#333";
@@ -8,7 +9,7 @@ function reset(A,B,C){
     
     setTimeout(function(){
        location.reload(); 
-    },2000);
+    },1000);
 }
 
 function checkWinner(){
@@ -53,7 +54,14 @@ function checkWinner(){
         alert('player '+ square[3] + ' win');
           reset(3,5,7);
     }
-}
+    
+      else if(square[1]!="" && square[2]!="" && square[3]!="" && square[4]!="" && square[5]!="" && square[6]!="" && square[7]!="" && square[8]!="" && square[9]!=""){
+        alert('draw');
+        location.reload();   
+      }
+
+  }
+    
 
 function insert(id){
     var L=document.getElementById(id);
