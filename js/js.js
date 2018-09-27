@@ -1,7 +1,6 @@
 var turn = true;
 var square=[];
 
-
 function reset(A,B,C){
     document.getElementById('c'+A).style.backgroundColor="#333";
     document.getElementById('c'+B).style.backgroundColor="#333";
@@ -64,13 +63,16 @@ function checkWinner(){
     
 
 function insert(id){
+    var e=document.getElementById('role');
     var L=document.getElementById(id);
     if(turn && L.innerHTML==""){
         L.innerHTML="X";
+        e.innerHTML="player O";
         turn=!turn;
     }
     else if(!turn && L.innerHTML==""){
       L.innerHTML="O";
+      e.innerHTML="player X";
         turn=!turn;  
     }
     checkWinner();
